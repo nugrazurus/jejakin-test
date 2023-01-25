@@ -12,22 +12,22 @@ public class Order {
     @Id
     private String id;
     @NotNull
-    private String UserId;
+    private String userId;
     @NotNull
-    private String ProductId;
+    private String productId;
     @NotNull
-    private Integer Amount;
+    private Integer amount;
     @NotNull
-    private Integer Status;
+    private Integer status;
 
     public Order() {
     }
 
     public Order(String userId, String productId, Integer amount, Integer status) {
-        this.UserId = userId;
-        this.ProductId = productId;
-        this.Amount = amount;
-        this.Status = status;
+        this.userId = userId;
+        this.productId = productId;
+        this.amount = amount;
+        this.status = status;
     }
 
     public String getId() {
@@ -39,36 +39,36 @@ public class Order {
     }
 
     public String getUserId() {
-        return UserId;
+        return userId;
     }
 
     @NonNull
     public void setUserId(String userId) {
-        UserId = userId;
+        this.userId = userId;
     }
 
     public String getProductId() {
-        return ProductId;
+        return productId;
     }
 
     @NonNull
     public void setProductId(String productId) {
-        ProductId = productId;
+        this.productId = productId;
     }
 
     public Integer getAmount() {
-        return Amount;
+        return amount;
     }
 
     public void setAmount(Integer amount) {
-        Amount = amount;
+        this.amount = amount;
     }
 
     public Integer getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(Integer status) {
-        Status = status;
+        this.status = status;
     }
 }

@@ -1,10 +1,14 @@
 version: '3.4'
 
 services:
-  jejakin:
-    image: jejakin
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+  backend:
+    build: .
     ports:
       - 8080:8080
+    links:
+      - db:db
+  db:
+    image: mongo
+    ports:
+      - 27017:27017
+
