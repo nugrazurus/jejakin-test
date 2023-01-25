@@ -46,9 +46,9 @@ public class OrderRestController {
         return ResponseEntity.ok().body(orderService.updateOrderAmountById(order));
     }
 
-    @DeleteMapping("/{id}")
-    public HttpStatus deleteProduct(@PathVariable String id) {
-        orderService.deleteOrderById(id);
+    @DeleteMapping("/{id}/{userId}")
+    public HttpStatus deleteProduct(@PathVariable String id, @PathVariable String userId) {
+        orderService.deleteOrderByIdAndUserId(id, userId);
         return HttpStatus.OK;
     }
 

@@ -45,7 +45,12 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public void deleteOrderById(String id) {
-        orderRepository.deleteById(id);
+    public void deleteOrderByIdAndUserId(String id, String userId) {
+        Optional<Order> orderDB = orderRepository.findOptionalByIdAndUserId(id, userId);
+        if (orderDB.isPresent()) {
+            orderRepository.delete(orderDB.get());
+        } else {
+            throw new ErrorResponseException(HttpStatus.NOT_FOUND);
+        }
     }
 }

@@ -14,5 +14,5 @@ public interface OrderService {
 
     Order updateOrderAmountById(Order order);
 
-    void deleteOrderById(String id);
+    void deleteOrderByIdAndUserId(String id, String userId);
 }
